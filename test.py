@@ -1,4 +1,4 @@
-'''#1. Check if a number is even or odd
+#1. Check if a number is even or odd
 a = int(input("Enter any number :"))
 if a%2== 0:
     print(f"{a} is Even Number")
@@ -122,9 +122,61 @@ while True:
         break
 
 17.	Determine triangle type (isosceles, scalene, equilateral)
+side1 = float(input("Enter length of side 1: "))
+side2 = float(input("Enter length of side 2: "))
+side3 = float(input("Enter length of side 3: "))
+if (side1 + side2 > side3) and (side2 + side3 > side1) and (side1 + side3 > side2):
+    if side1 == side2 == side3:
+        print("The triangle is Equilateral.")
+    elif side1 == side2 or side2 == side3 or side1 == side3:
+        print("The triangle is Isosceles.")
+    else:
+        print("The triangle is Scalene.")
+else:
+    print("The given sides do not form a valid triangle.")
+
 18.	Check if a number is Armstrong
+num = int(input("Enter a number: "))
+n = num
+power = len(str(num))
+total = 0
+
+while n > 0:
+    digit = n % 10
+    total += digit ** power
+    n //= 10
+
+if total == num:
+    print(f"{num} is an Armstrong number")
+else:
+    print(f"{num} is not an Armstrong number")
+
 19.	Convert temperature Celsius to Fahrenheit and vice versa
+choice = input("Convert from Celsius to Fahrenheit (C) or Fahrenheit to Celsius (F)? ").upper()
+
+if choice == 'C':
+    celsius = float(input("Enter temperature in Celsius: "))
+    fahrenheit = (celsius * 9/5) + 32
+    print(f"{celsius}°C is {fahrenheit}°F")
+elif choice == 'F':
+    fahrenheit = float(input("Enter temperature in Fahrenheit: "))
+    celsius = (fahrenheit - 32) * 5/9
+    print(f"{fahrenheit}°F is {celsius}°C")
+else:
+    print("Invalid input. Please choose 'C' or 'F'.")
+
 20.	Find the profit or loss on selling a product.
+cost_price = float(input("Enter the cost price: "))
+selling_price = float(input("Enter the selling price: "))
+
+if selling_price > cost_price:
+    profit = selling_price - cost_price
+    print(f"Profit of {profit}")
+elif selling_price < cost_price:
+    loss = cost_price - selling_price
+    print(f"Loss of {loss}")
+else:
+    print("No profit, no loss")
 
 #12. Check if a number is a multiple of 3 or 7
 while True:
@@ -167,7 +219,6 @@ def main():
 if __name__ == "__main__":
     main()
 
-#14. Check if a number is a palindrome
 #15. Check if a year is a century year
 while True:
     year = int(input("Enter any year :"))
@@ -187,9 +238,10 @@ if a > 0 and b > 0 and c > 0 and (a + b + c == 180):
     print("This is a Valid Triangel ")
 else:
     print("This is not a Valid Triangel ")
-### Grading System with Nested Conditions:
-#Determine a student's grade based on score ranges with nested if-else—for example,
-#if score > 90 then "A", if between 80 and 90 check further for "A-" or "B+", else lower grades accordingly.​
+    
+'''Grading System with Nested Conditions:
+17. Determine a student's grade based on score ranges with nested if-else—for example,
+if score > 90 then "A", if between 80 and 90 check further for "A-" or "B+", else lower grades accordingly.​'''
 
 Math = int(input("Enter you Obtain Marks in Math :"))
 Physics = int(input("Enter you Obtain Marks in Physics :"))
@@ -224,9 +276,9 @@ year = int(input("Enter any year :"))
 if year%4==0 and year%100 !=0 or year%400==0:
     print(f"{year} is leap year")
 else:
-    print(f"{year} is not leap year")'''
+    print(f"{year} is not leap year")
 
-
+# Another Method
 count = 0
 print("Leap years between 2000 and 3000 are:")
 for year in range(2000, 3001):
@@ -234,16 +286,6 @@ for year in range(2000, 3001):
         print(year,end=" ")
         count += 1
 print(f"Total number of leap years: {count}")
-
-'''Password Validation:
-Check if a user's entered password matches a stored password. If correct, print success message; otherwise, print an error.​
-
-Maximum of Three Numbers:
-Find and print the maximum of three input numbers using nested if-else statements.​
-
-Triangle Type Determination:
-Based on three input sides, check if a triangle is equilateral, isosceles, or scalene with if-else branches.'''
-
 
 
 
